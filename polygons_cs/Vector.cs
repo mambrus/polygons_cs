@@ -45,6 +45,69 @@ namespace polygons_cs
         }
       }
     }
+
+    // Linear Algebra operators
+    // ========================
+    /*
+    // Overload + operator, 2 vectors
+    public static Vector<VTYPE> operator +(Vector<VTYPE> lhs, Vector<VTYPE> rhs)
+    {
+      Vector<VTYPE> ret = new Vector<VTYPE>(lhs.size());
+
+      if (rhs.size() != lhs.size())
+      {
+        throw (new VectorException("Vectors must be of the same dimension to be added with each other"));
+      }
+      for (int i = 0; i < lhs.size(); i++)
+      {
+        ret[i] = lhs[i] + rhs[i];
+      }
+      return ret;
+    }
+
+    // Overload - operator: 2 vectors
+    public static Vector<VTYPE> operator -(Vector<VTYPE> lhs, Vector<VTYPE> rhs)
+    {
+      Vector<VTYPE> ret = new Vector<VTYPE>(lhs.size());
+
+      if (rhs.size() != lhs.size())
+      {
+        throw (new VectorException("Vectors must be of the same dimension to be added with each other"));
+      }
+      for (int i = 0; i < lhs.size(); i++)
+      {
+        ret[i] = lhs[i] - rhs[i];
+      }
+      return ret;
+    }
+
+    // Overload + operator: vector + element
+    public static Vector<VTYPE> operator +(Vector<VTYPE> lhs, VTYPE rhs)
+    {
+      Vector<VTYPE> ret = new Vector<VTYPE>(lhs.size());
+
+      for (int i = 0; i < lhs.size(); i++)
+      {
+        ret[i] = lhs[i] + rhs;
+      }
+      return ret;
+    }
+
+    // Overload - operator: vector - element
+    public static Vector<VTYPE> operator -(Vector<VTYPE> lhs, VTYPE rhs)
+    {
+      Vector<VTYPE> ret = new Vector<VTYPE>(lhs.size());
+
+
+      for (int i = 0; i < lhs.size(); i++)
+      {
+        ret[i] = lhs[i] - rhs;
+      }
+      return ret;
+    }
+    */
+
   }
 }
+
 
