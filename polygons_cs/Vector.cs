@@ -24,15 +24,13 @@ namespace polygons_cs
     {
       get
       {
-
         if (index >= 0 && index < m_v.Length)
         {
           return m_v[index];
         }
         else
         {
-          //Put trow here
-          return m_v[0];
+          throw (new VectorException("Index out of boundaries"));
         }
       }
       set
@@ -43,10 +41,9 @@ namespace polygons_cs
         }
         else
         {
-          //Put trow here
+          throw (new VectorException("Index out of boundaries"));
         }
       }
- 
     }
   }
 }
