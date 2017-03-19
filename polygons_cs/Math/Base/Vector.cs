@@ -9,7 +9,12 @@
       m_v = new T[size];
     }
 
-    public int Lenght()
+      protected Vector()
+      {
+          throw new System.NotImplementedException();
+      }
+
+      public int Lenght()
     {
       return m_v.Length;
     }

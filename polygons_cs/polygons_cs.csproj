@@ -44,6 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Math\Base\VectorException.cs" />
+    <Compile Include="Math\Graphics3D\Vertex.cs" />
+    <Compile Include="Math\LinearAlgebra\Vector.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Math\Base\Vector.cs" />
