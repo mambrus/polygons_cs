@@ -43,10 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="VectorException.cs" />
+    <Compile Include="Math\Base\VectorException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Vector.cs" />
+    <Compile Include="Math\Base\Vector.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
