@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace polygons_cs
 {
-  class Vector<VTYPE>
+  class Vector<T>
   {
-    private VTYPE[] m_v;
+    private T[] m_v;
 
     public Vector(int size)
     {
-      m_v = new VTYPE[size];
+      m_v = new T[size];
     }
 
     public int size()
@@ -20,7 +20,7 @@ namespace polygons_cs
       return m_v.Length;
     }
 
-    public VTYPE this[int index]
+    public T this[int index]
     {
       get
       {
@@ -50,9 +50,9 @@ namespace polygons_cs
     // ========================
     /*
     // Overload + operator, 2 vectors
-    public static Vector<VTYPE> operator +(Vector<VTYPE> lhs, Vector<VTYPE> rhs)
+    public static Vector<T> operator +(Vector<VTYPE> lhs, Vector<VTYPE> rhs)
     {
-      Vector<VTYPE> ret = new Vector<VTYPE>(lhs.size());
+      Vector<T> ret = new Vector<VTYPE>(lhs.size());
 
       if (rhs.size() != lhs.size())
       {
@@ -66,9 +66,9 @@ namespace polygons_cs
     }
 
     // Overload - operator: 2 vectors
-    public static Vector<VTYPE> operator -(Vector<VTYPE> lhs, Vector<VTYPE> rhs)
+    public static Vector<T> operator -(Vector<VTYPE> lhs, Vector<VTYPE> rhs)
     {
-      Vector<VTYPE> ret = new Vector<VTYPE>(lhs.size());
+      Vector<T> ret = new Vector<VTYPE>(lhs.size());
 
       if (rhs.size() != lhs.size())
       {
@@ -82,9 +82,9 @@ namespace polygons_cs
     }
 
     // Overload + operator: vector + element
-    public static Vector<VTYPE> operator +(Vector<VTYPE> lhs, VTYPE rhs)
+    public static Vector<T> operator +(Vector<VTYPE> lhs, VTYPE rhs)
     {
-      Vector<VTYPE> ret = new Vector<VTYPE>(lhs.size());
+      Vector<T> ret = new Vector<VTYPE>(lhs.size());
 
       for (int i = 0; i < lhs.size(); i++)
       {
@@ -94,9 +94,9 @@ namespace polygons_cs
     }
 
     // Overload - operator: vector - element
-    public static Vector<VTYPE> operator -(Vector<VTYPE> lhs, VTYPE rhs)
+    public static Vector<T> operator -(Vector<VTYPE> lhs, VTYPE rhs)
     {
-      Vector<VTYPE> ret = new Vector<VTYPE>(lhs.size());
+      Vector<T> ret = new Vector<VTYPE>(lhs.size());
 
 
       for (int i = 0; i < lhs.size(); i++)
