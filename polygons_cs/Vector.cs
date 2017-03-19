@@ -15,7 +15,7 @@ namespace polygons_cs
       m_v = new T[size];
     }
 
-    public int size()
+    public int Lenght()
     {
       return m_v.Length;
     }
@@ -52,13 +52,13 @@ namespace polygons_cs
     // Overload + operator, 2 vectors
     public static Vector<T> operator +(Vector<VTYPE> lhs, Vector<VTYPE> rhs)
     {
-      Vector<T> ret = new Vector<VTYPE>(lhs.size());
+      Vector<T> ret = new Vector<VTYPE>(lhs.Lenght());
 
-      if (rhs.size() != lhs.size())
+      if (rhs.Lenght() != lhs.size())
       {
         throw (new VectorException("Vectors must be of the same dimension to be added with each other"));
       }
-      for (int i = 0; i < lhs.size(); i++)
+      for (int i = 0; i < lhs.Lenght(); i++)
       {
         ret[i] = lhs[i] + rhs[i];
       }
@@ -68,13 +68,13 @@ namespace polygons_cs
     // Overload - operator: 2 vectors
     public static Vector<T> operator -(Vector<VTYPE> lhs, Vector<VTYPE> rhs)
     {
-      Vector<T> ret = new Vector<VTYPE>(lhs.size());
+      Vector<T> ret = new Vector<VTYPE>(lhs.Lenght());
 
-      if (rhs.size() != lhs.size())
+      if (rhs.Lenght() != lhs.size())
       {
         throw (new VectorException("Vectors must be of the same dimension to be added with each other"));
       }
-      for (int i = 0; i < lhs.size(); i++)
+      for (int i = 0; i < lhs.Lenght(); i++)
       {
         ret[i] = lhs[i] - rhs[i];
       }
@@ -84,9 +84,9 @@ namespace polygons_cs
     // Overload + operator: vector + element
     public static Vector<T> operator +(Vector<VTYPE> lhs, VTYPE rhs)
     {
-      Vector<T> ret = new Vector<VTYPE>(lhs.size());
+      Vector<T> ret = new Vector<VTYPE>(lhs.Lenght());
 
-      for (int i = 0; i < lhs.size(); i++)
+      for (int i = 0; i < lhs.Lenght(); i++)
       {
         ret[i] = lhs[i] + rhs;
       }
@@ -96,10 +96,10 @@ namespace polygons_cs
     // Overload - operator: vector - element
     public static Vector<T> operator -(Vector<VTYPE> lhs, VTYPE rhs)
     {
-      Vector<T> ret = new Vector<VTYPE>(lhs.size());
+      Vector<T> ret = new Vector<VTYPE>(lhs.Lenght());
 
 
-      for (int i = 0; i < lhs.size(); i++)
+      for (int i = 0; i < lhs.Lenght(); i++)
       {
         ret[i] = lhs[i] - rhs;
       }

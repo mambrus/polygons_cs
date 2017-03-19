@@ -27,7 +27,7 @@ namespace polygons_cs
         myVector[9] = 10;
 
         //using the first indexer with int parameter to print int Vector
-        for (int i = 0; i < myVector.size(); i++)
+        for (int i = 0; i < myVector.Lenght(); i++)
         {
           Console.WriteLine(i + ": " + myVector[i]);
         }
@@ -46,7 +46,7 @@ namespace polygons_cs
         myVector2[9] = 10.0;
 
         //using the first indexer with int parameter to print float Vector
-        for (int i = 0; i < myVector2.size(); i++)
+        for (int i = 0; i < myVector2.Lenght(); i++)
         {
           Console.WriteLine(i + ": " + myVector2[i]);
         }
@@ -65,9 +65,9 @@ namespace polygons_cs
         myVector3[9] = myVector2;
 
         //using the first indexer with int parameter to print float Vector
-        for (int i = 0; i < myVector3.size(); i++)
+        for (int i = 0; i < myVector3.Lenght(); i++)
         {
-          for (int j = 0; j < myVector2.size() + 1; j++)
+          for (int j = 0; j < myVector2.Lenght() + 1; j++)
           {
             Console.WriteLine("[" + i + "][" + j + "]: " + myVector3[i][j]);
           }
