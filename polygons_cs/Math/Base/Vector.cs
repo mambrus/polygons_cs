@@ -1,112 +1,72 @@
 ﻿namespace polygons_cs.Math.Base
 {
-  class Vector<T>
-  {
-    private T[] m_v;
-
-    public Vector(int size)
+    class Vector<T>
     {
-      m_v = new T[size];
-    }
+        private T[] m_v;
 
-      protected Vector()
-      {
-          throw new System.NotImplementedException();
-      }
-
-      public int Lenght()
-    {
-      return m_v.Length;
-    }
-
-    public T this[int index]
-    {
-      get
-      {
-        if (index >= 0 && index < m_v.Length)
+        protected Vector()
         {
-          return m_v[index];
+            throw new System.NotImplementedException();
         }
-        else
+
+        public Vector(int size)
         {
-          throw (new VectorException("Index out of boundaries"));
+            m_v = new T[size];
         }
-      }
-      set
-      {
-        if (index >= 0 && index < m_v.Length)
+
+        // Arrays not decaying to pointers as in C/C++ is a nice feature.
+        // Corresponding in C/C++ would require macro trickey.
+        // (If olny it worked... Error on caller side)
+        public Vector(T[] d)
         {
-          m_v[index] = value;
+            m_v = new T[d.Length];
+            Assign(d);
         }
-        else
+
+        //C# lacks overloadable assignement operator ('=')
+        public Vector<T> Assign(T[] d)
         {
-          throw (new VectorException("Index out of boundaries"));
+            if (d.Length != m_v.Length)
+            {
+                throw (new VectorException("Assignement from array with different lengt is illegal"));
+            }
+
+            for (int i = 0; i < d.Length; i++)
+            {
+                m_v[i] = d[i];
+            }
+            return this;
         }
-      }
+
+        public int Lenght()
+        {
+            return m_v.Length;
+        }
+
+        public T this[int index]
+        {
+            get
+            {
+                if (index >= 0 && index < m_v.Length)
+                {
+                    return m_v[index];
+                }
+                else
+                {
+                    throw (new VectorException("Index out of boundaries"));
+                }
+            }
+            set
+            {
+                if (index >= 0 && index < m_v.Length)
+                {
+                    m_v[index] = value;
+                }
+                else
+                {
+                    throw (new VectorException("Index out of boundaries"));
+                }
+            }
+        }
     }
-
-    // Linear Algebra operators
-    // ========================
-    /*
-    // Overload + operator, 2 vectors
-    public static Vector<T> operator +(Vector<VTYPE> lhs, Vector<VTYPE> rhs)
-    {
-      Vector<T> ret = new Vector<VTYPE>(lhs.Lenght());
-
-      if (rhs.Lenght() != lhs.size())
-      {
-        throw (new VectorException("Vectors must be of the same dimension to be added with each other"));
-      }
-      for (int i = 0; i < lhs.Lenght(); i++)
-      {
-        ret[i] = lhs[i] + rhs[i];
-      }
-      return ret;
-    }
-
-    // Overload - operator: 2 vectors
-    public static Vector<T> operator -(Vector<VTYPE> lhs, Vector<VTYPE> rhs)
-    {
-      Vector<T> ret = new Vector<VTYPE>(lhs.Lenght());
-
-      if (rhs.Lenght() != lhs.size())
-      {
-        throw (new VectorException("Vectors must be of the same dimension to be added with each other"));
-      }
-      for (int i = 0; i < lhs.Lenght(); i++)
-      {
-        ret[i] = lhs[i] - rhs[i];
-      }
-      return ret;
-    }
-
-    // Overload + operator: vector + element
-    public static Vector<T> operator +(Vector<VTYPE> lhs, VTYPE rhs)
-    {
-      Vector<T> ret = new Vector<VTYPE>(lhs.Lenght());
-
-      for (int i = 0; i < lhs.Lenght(); i++)
-      {
-        ret[i] = lhs[i] + rhs;
-      }
-      return ret;
-    }
-
-    // Overload - operator: vector - element
-    public static Vector<T> operator -(Vector<VTYPE> lhs, VTYPE rhs)
-    {
-      Vector<T> ret = new Vector<VTYPE>(lhs.Lenght());
-
-
-      for (int i = 0; i < lhs.Lenght(); i++)
-      {
-        ret[i] = lhs[i] - rhs;
-      }
-      return ret;
-    }
-    */
-
-  }
 }
-
-

@@ -15,66 +15,63 @@ namespace polygons_cs
 
             try
             {
-                Math.LinearAlgebra.Vector<int> myVector = new Math.LinearAlgebra.Vector<int>(10);
-
-                myVector[0] = 1;
-                myVector[1] = 2;
-                myVector[2] = 3;
-                myVector[3] = 4;
-                myVector[4] = 5;
-                myVector[5] = 6;
-                myVector[6] = 7;
-                myVector[7] = 8;
-                myVector[8] = 9;
-                myVector[9] = 10;
+                int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+                Math.LinearAlgebra.Vector<int> A = new
+                    Math.LinearAlgebra.Vector<int>(a.Length);
+                A.Assign(a);
 
                 //using the first indexer with int parameter to print int Vector
-                for (int i = 0; i < myVector.Lenght(); i++)
+                for (int i = 0; i < A.Lenght(); i++)
                 {
-                    Console.WriteLine(i + ": " + myVector[i]);
+                    Console.WriteLine("A[" + i + "]: " + A[i]);
                 }
+                Console.WriteLine();
 
-                Math.LinearAlgebra.Vector<double> myVector2 = new Math.LinearAlgebra.Vector<double>(10);
+                // Linear algebra arithmetic int test
+                Math.LinearAlgebra.Vector<int> C = A + A; //<-- HEPP!
+                for (int i = 0; i < C.Lenght(); i++)
+                {
+                    Console.WriteLine("C[" + i + "]: " + C[i]);
+                }
+                Console.WriteLine();
 
-                myVector2[0] = 1.1;
-                myVector2[1] = 2.2;
-                myVector2[2] = 3.3;
-                myVector2[3] = 4.4;
-                myVector2[4] = 5.5;
-                myVector2[5] = 6.6;
-                myVector2[6] = 7.7;
-                myVector2[7] = 8.8;
-                myVector2[8] = 9.9;
-                myVector2[9] = 10.0;
+                double[] b = {1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9, 10.0};
+                Math.LinearAlgebra.Vector<double> B =
+                    new Math.LinearAlgebra.Vector<double>(b.Length);
+                B.Assign(b);
 
                 //using the first indexer with int parameter to print float Vector
-                for (int i = 0; i < myVector2.Lenght(); i++)
+                for (int i = 0; i < B.Lenght(); i++)
                 {
-                    Console.WriteLine(i + ": " + myVector2[i]);
+                    Console.WriteLine("B[" + i + "]: " + B[i]);
                 }
+                Console.WriteLine();
 
-                // Pure Bas.Vector until operations are implemented (TBD
-                Math.Base.Vector<Math.Base.Vector<double>> myVector3 = new Math.Base.Vector<Math.Base.Vector<double>>(10);
 
-                myVector3[0] = myVector2;
-                myVector3[1] = myVector2;
-                myVector3[2] = myVector2;
-                myVector3[3] = myVector2;
-                myVector3[4] = myVector2;
-                myVector3[5] = myVector2;
-                myVector3[6] = myVector2;
-                myVector3[7] = myVector2;
-                myVector3[8] = myVector2;
-                myVector3[9] = myVector2;
+                // Linear algebra arithmetic double test
+                Math.LinearAlgebra.Vector<double> D = B + B; //<-- HEPP!
+                for (int i = 0; i < D.Lenght(); i++)
+                {
+                    Console.WriteLine("D[" + i + "]: " + D[i]);
+                }
+                Console.WriteLine();
+
+                // Pure Base.Vector until LA operations for multidementional
+                // Vectors are implemented (TBD)
+                Math.Base.Vector<double>[] m = {B, D, B + B, B + D, D - B, B - B};
+                Math.Base.Vector<Math.Base.Vector<double>> M =
+                    new Math.Base.Vector<Math.Base.Vector<double>>(m.Length);
+                M.Assign(m);
 
                 //using the first indexer with int parameter to print float Vector
-                for (int i = 0; i < myVector3.Lenght(); i++)
+                for (int i = 0; i < M.Lenght() + 1; i++)
                 {
-                    for (int j = 0; j < myVector2.Lenght() + 1; j++)
+                    for (int j = 0; j < B.Lenght(); j++)
                     {
-                        Console.WriteLine("[" + i + "][" + j + "]: " + myVector3[i][j]);
+                        Console.WriteLine("M[" + i + "][" + j + "]: " + M[i][j]);
                     }
                 }
+                Console.WriteLine();
             }
             catch (VectorException e)
             {
