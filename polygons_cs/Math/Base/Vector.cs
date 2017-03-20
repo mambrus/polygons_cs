@@ -16,7 +16,6 @@
 
         // Arrays not decaying to pointers as in C/C++ is a nice feature.
         // Corresponding in C/C++ would require macro trickey.
-        // (If olny it worked... Error on caller side)
         public Vector(T[] d)
         {
             m_v = new T[d.Length];

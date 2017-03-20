@@ -15,10 +15,9 @@ namespace polygons_cs
 
             try
             {
-                int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
                 Math.LinearAlgebra.Vector<int> A = new
-                    Math.LinearAlgebra.Vector<int>(a.Length);
-                A.Assign(a);
+                    Math.LinearAlgebra.Vector<int>(
+                        new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
 
                 //using the first indexer with int parameter to print int Vector
                 for (int i = 0; i < A.Lenght(); i++)
@@ -35,10 +34,11 @@ namespace polygons_cs
                 }
                 Console.WriteLine();
 
-                double[] b = {1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9, 10.0};
+
                 Math.LinearAlgebra.Vector<double> B =
-                    new Math.LinearAlgebra.Vector<double>(b.Length);
-                B.Assign(b);
+                    new Math.LinearAlgebra.Vector<double>(
+                        new double[] {1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9, 10.0});
+
 
                 //using the first indexer with int parameter to print float Vector
                 for (int i = 0; i < B.Lenght(); i++)
@@ -58,10 +58,10 @@ namespace polygons_cs
 
                 // Pure Base.Vector until LA operations for multidementional
                 // Vectors are implemented (TBD)
-                Math.Base.Vector<double>[] m = {B, D, B + B, B + D, D - B, B - B};
+
                 Math.Base.Vector<Math.Base.Vector<double>> M =
-                    new Math.Base.Vector<Math.Base.Vector<double>>(m.Length);
-                M.Assign(m);
+                    new Math.Base.Vector<Math.Base.Vector<double>>(
+                        new Math.Base.Vector<double>[] {B, D, B + B, B + D, D - B, B - B});
 
                 //using the first indexer with int parameter to print float Vector
                 for (int i = 0; i < M.Lenght() + 1; i++)

@@ -10,7 +10,13 @@ namespace polygons_cs.Math.LinearAlgebra
 {
     class Vector<T> : Base.Vector<T> where T : IComparable
     {
+        // Re-implement base-class public constructor (bacause
+        // language requires it)
         public Vector(int size) : base(size)
+        {
+        }
+
+        public Vector(T[] d) : base(d)
         {
         }
 
@@ -28,6 +34,7 @@ namespace polygons_cs.Math.LinearAlgebra
                 ret[i] = (dynamic) lhs[i] + (dynamic) rhs[i];
             return ret;
         }
+
         // Overload - operator, 2 vectors
         public static Vector<T> operator -(Vector<T> lhs, Vector<T> rhs)
         {
@@ -39,7 +46,7 @@ namespace polygons_cs.Math.LinearAlgebra
                     "Vectors must be of the same size to be subtracted"));
             }
             for (int i = 0; i < lhs.Lenght(); i++)
-                ret[i] = (dynamic)lhs[i] - (dynamic)rhs[i];
+                ret[i] = (dynamic) lhs[i] - (dynamic) rhs[i];
             return ret;
         }
     }
