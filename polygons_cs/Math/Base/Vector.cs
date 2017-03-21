@@ -4,7 +4,7 @@
   {
     #region members
 
-    private T[] m_v;
+    private readonly T[] m_v;
 
     #endregion
 

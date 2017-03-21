@@ -21,10 +21,28 @@ namespace polygons_cs
           Math.LinearAlgebra.Vector<int>(
             new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
 
+        // Make sure the invariant apply to the collection, not it's content
+        A[3] = 77;
+        A[3] = 78;
+
+        Math.LinearAlgebra.Vector<int> G;
+        //Can we assign G twice with the vector of the same size?
+        G = A;
+        G = A;
+
+        //Yepp, but different size?
+        Math.LinearAlgebra.Vector<int> X = new
+          Math.LinearAlgebra.Vector<int>(
+            new int[] { 1, 2, 3 });
+
+        // Hmm, this was supposed to break. Oh well, I didn't trust the immutable concept anyway...
+        G = X;
+
+
         //using the first indexer with int parameter to print int Vector
         for (int i = 0; i < A.Lenght; i++)
         {
-          Console.WriteLine("A[" + i + "]: " + A[i]);
+          Console.WriteLine("A[" + i + "]: " + A[i] +", "+ "G[" + i + "]: " + G[i]);
         }
         Console.WriteLine();
 
