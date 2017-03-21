@@ -30,14 +30,14 @@ namespace polygons_cs.Math.LinearAlgebra
     // Overload + operator, 2 vectors
     public static Vector<T> operator +(Vector<T> lhs, Vector<T> rhs)
     {
-      Vector<T> ret = new Vector<T>(lhs.Lenght());
+      Vector<T> ret = new Vector<T>(lhs.Lenght);
 
-      if (rhs.Lenght() != lhs.Lenght())
+      if (rhs.Lenght != lhs.Lenght)
       {
         throw (new VectorException(
           "Vectors must be of the same size to be added"));
       }
-      for (int i = 0; i < lhs.Lenght(); i++)
+      for (int i = 0; i < lhs.Lenght; i++)
         ret[i] = (dynamic) lhs[i] + (dynamic) rhs[i];
       return ret;
     }
@@ -45,14 +45,14 @@ namespace polygons_cs.Math.LinearAlgebra
     // Overload - operator, 2 vectors
     public static Vector<T> operator -(Vector<T> lhs, Vector<T> rhs)
     {
-      Vector<T> ret = new Vector<T>(lhs.Lenght());
+      Vector<T> ret = new Vector<T>(lhs.Lenght);
 
-      if (rhs.Lenght() != lhs.Lenght())
+      if (rhs.Lenght != lhs.Lenght)
       {
         throw (new VectorException(
           "Vectors must be of the same size to be subtracted"));
       }
-      for (int i = 0; i < lhs.Lenght(); i++)
+      for (int i = 0; i < lhs.Lenght; i++)
         ret[i] = (dynamic) lhs[i] - (dynamic) rhs[i];
       return ret;
     }

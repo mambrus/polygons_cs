@@ -47,9 +47,9 @@
       return this;
     }
 
-    public int Lenght()
+    public int Lenght
     {
-      return m_v.Length;
+      get { return m_v.Length; }
     }
 
     #endregion

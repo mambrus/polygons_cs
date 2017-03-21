@@ -22,7 +22,7 @@ namespace polygons_cs
             new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
 
         //using the first indexer with int parameter to print int Vector
-        for (int i = 0; i < A.Lenght(); i++)
+        for (int i = 0; i < A.Lenght; i++)
         {
           Console.WriteLine("A[" + i + "]: " + A[i]);
         }
@@ -30,7 +30,7 @@ namespace polygons_cs
 
         // Linear algebra arithmetic int test
         Math.LinearAlgebra.Vector<int> C = A + A; //<-- HEPP!
-        for (int i = 0; i < C.Lenght(); i++)
+        for (int i = 0; i < C.Lenght; i++)
         {
           Console.WriteLine("C[" + i + "]: " + C[i]);
         }
@@ -43,7 +43,7 @@ namespace polygons_cs
 
 
         //using the first indexer with int parameter to print float Vector
-        for (int i = 0; i < B.Lenght(); i++)
+        for (int i = 0; i < B.Lenght; i++)
         {
           Console.WriteLine("B[" + i + "]: " + B[i]);
         }
@@ -52,7 +52,7 @@ namespace polygons_cs
 
         // Linear algebra arithmetic double test
         Math.LinearAlgebra.Vector<double> D = B + B; //<-- HEPP!
-        for (int i = 0; i < D.Lenght(); i++)
+        for (int i = 0; i < D.Lenght; i++)
         {
           Console.WriteLine("D[" + i + "]: " + D[i]);
         }
@@ -70,9 +70,9 @@ namespace polygons_cs
             new Math.Base.Vector<double>[] {B, D, B + B, B + D, D - B, B - B});
 
         //using the first indexer with int parameter to print float Vector
-        for (int i = 0; i < M.Lenght() + 1; i++)
+        for (int i = 0; i < M.Lenght + 1; i++)
         {
-          for (int j = 0; j < B.Lenght(); j++)
+          for (int j = 0; j < B.Lenght; j++)
           {
             Console.WriteLine("M[" + i + "][" + j + "]: " + M[i][j]);
           }
