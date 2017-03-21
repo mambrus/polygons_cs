@@ -8,14 +8,19 @@ using polygons_cs.Math.LinearAlgebra;
 
 namespace polygons_cs.Math.Graphics3D
 {
-    class Vertex : Base.Vector<double>
+
+  #region constructors
+
+  class Vertex : Base.Vector<double>
+  {
+    //A vertex is a 1 dimentional Vector<double> with a size
+    // of 3 (3 as in x, y, z value)
+    Vertex() : base(3)
     {
-        //A vertex is a 1 dimentional Vector<double> with a size
-        // of 3 (3 as in x, y, z value)
-        Vertex() : base(3)
-        {
-            throw new System.NotImplementedException();
-        }
+      throw new System.NotImplementedException();
     }
+  }
+
+  #endregion
 }
 
